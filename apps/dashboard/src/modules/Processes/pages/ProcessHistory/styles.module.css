@@ -1,0 +1,7 @@
+.ModalSearchFilters {
+  height: calc(100vh - 3rem);
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  width: 100% !important;
+  max-width: 30rem !important;
+}

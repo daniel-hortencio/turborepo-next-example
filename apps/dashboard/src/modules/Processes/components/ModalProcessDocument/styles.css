@@ -1,0 +1,4 @@
+.ModalProcessDocument__TableRow {
+  grid-template-columns: 5fr 5rem 5rem 2rem;
+  gap: 1rem;
+}
