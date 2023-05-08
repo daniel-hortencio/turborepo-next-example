@@ -1,4 +1,4 @@
-import { Box, InputSearch } from 'shared/components/elements'
+import { Box, InputSearch } from "shared/components/elements";
 
 export const WebsiteHomeBanner = () => {
   return (
@@ -9,9 +9,9 @@ export const WebsiteHomeBanner = () => {
         E-PROC, E-SAJ, PROJUDI, E-STF, E-STJ, Creta, Apolo e Tucujuris.
       </h2>
 
-      <InputSearch onSubmit={() => {}} />
+      {/* <InputSearch onSubmit={() => {}} /> */}
 
       <p>Mais pesquisados: Testar API · Documentação · Planos disponíveis</p>
     </Box>
-  )
-}
+  );
+};

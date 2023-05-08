@@ -1,24 +1,24 @@
-import { Box, Icon, Text } from 'shared/components/elements'
+import { Box, Icon, Text, Wrapper } from "shared/components/elements";
 
 export const WebsiteHowWorks = () => {
   return (
-    <Box>
-      <h2>
+    <Wrapper className="test">
+      <h2 className="mx-auto mb-14 max-w-3xl text-center text-28px font-extrabold text-custom-gray-500">
         Somos uma API ágil para consultar informações de processos através dos
         tribunais
       </h2>
 
-      <Box className="grid lg:grid-cols-3 gap-8 md:gap-12">
+      <Box className="mb-14 grid gap-8 md:gap-12 lg:grid-cols-3">
         <Box className="flex items-start">
-          <Box className="pt-2 w-10 fill-primary relative">
-            <Box className="absolute w-9 h-9 bg-primary-light -top-1 -left-3 rounded-full" />
+          <Box className="relative w-10 fill-primary pt-2">
+            <Box className="absolute -left-3 -top-1 h-9 w-9 rounded-full bg-primary-light" />
             <Box className="relative z-10">
               <Icon name="FolderSimpleLock" size={36} />
             </Box>
           </Box>
 
           <Box className="w-full pl-4 sm:pl-6">
-            <Text as="h2" className="font-bold text-lg md:text-xl mb-2 ">
+            <Text as="h2" className="mb-2 text-lg font-bold md:text-xl ">
               Fusce faucibus sodales tellusitt amet
             </Text>
             <Text className="text-custom-gray-400">
@@ -29,15 +29,15 @@ export const WebsiteHowWorks = () => {
         </Box>
 
         <Box className="flex items-start">
-          <Box className="pt-2 w-10 fill-primary relative">
-            <Box className="absolute w-9 h-9 bg-primary-light -top-1 -left-3 rounded-full" />
+          <Box className="relative w-10 fill-primary pt-2">
+            <Box className="absolute -left-3 -top-1 h-9 w-9 rounded-full bg-primary-light" />
             <Box className="relative z-10">
               <Icon name="Cpu" size={36} />
             </Box>
           </Box>
 
           <Box className="w-full pl-4 sm:pl-6">
-            <Text as="h2" className="font-bold text-lg md:text-xl mb-2">
+            <Text as="h2" className="mb-2 text-lg font-bold md:text-xl">
               Vestibulum maximus laoreet sapien, sed convallis
             </Text>
             <Text className="text-custom-gray-400">
@@ -48,15 +48,15 @@ export const WebsiteHowWorks = () => {
         </Box>
 
         <Box className="flex items-start">
-          <Box className="pt-2 w-10 fill-primary relative">
-            <Box className="absolute w-9 h-9 bg-primary-light -top-1 -left-3 rounded-full" />
+          <Box className="relative w-10 fill-primary pt-2">
+            <Box className="absolute -left-3 -top-1 h-9 w-9 rounded-full bg-primary-light" />
             <Box className="relative z-10">
               <Icon name="Database" size={36} />
             </Box>
           </Box>
 
           <Box className="w-full pl-4 sm:pl-6">
-            <Text as="h2" className="font-bold text-lg md:text-xl mb-2">
+            <Text as="h2" className="mb-2 text-lg font-bold md:text-xl">
               Duis eros orci, blandit nec dolor ac, fringilla
             </Text>
             <Text className="text-custom-gray-400">
@@ -66,6 +66,6 @@ export const WebsiteHowWorks = () => {
           </Box>
         </Box>
       </Box>
-    </Box>
-  )
-}
+    </Wrapper>
+  );
+};

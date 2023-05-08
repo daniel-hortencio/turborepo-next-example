@@ -1,42 +1,30 @@
-import { Box, Button, Text, Logo } from '../../../elements'
+import { Suspense, useEffect, useState } from "react";
 
-interface Props {
-  desktopText?: string
-  linkTo?: string
-  desktopLinkText?: string
-  mobileLinkText?: string
-}
+import { Box, Logo } from "../../../elements";
+import { MenuMobile, MenuMobileButton } from "../MenuMobile";
+import { MenuDesktop } from "../MenuDesktop";
 
-export const WebsiteLayoutHeader = ({
-  desktopText,
-  linkTo,
-  desktopLinkText,
-  mobileLinkText
-}: Props) => {
+import "./styles.css";
+
+export const WebsiteLayoutHeader = () => {
+  const [isOpenMobileMenu, setIsOpenMobileMenu] = useState(false);
+
   return (
-    <Box className="fixed flex top-0 left-0 w-full h-20 lg:h-28 backdrop-blur-lg z-20">
-      <Box className="w-full max-w-6xl mx-auto flex items-center p-5 justify-between">
-        <Logo color="white" />
-        <Box className="w-32 md:hidden">
-          <Button
-            text={mobileLinkText}
-            size="large"
-            color="primary"
-            as="link"
-            href={linkTo}
+    <Box>
+      <Box className="WebsiteLayoutHeader fixed left-0 top-0 z-20 flex h-20 w-full backdrop-blur-md lg:h-28">
+        <Box className="mx-auto flex w-full max-w-6xl items-center justify-between border-b-1 border-custom-gray-100 p-5">
+          <Logo color="black" />
+
+          <MenuDesktop />
+          <MenuMobileButton
+            isOpen={isOpenMobileMenu}
+            onChange={setIsOpenMobileMenu}
           />
         </Box>
-        <Text className="text-white hidden md:block">
-          {desktopText}{' '}
-          <a
-            href={linkTo}
-            className="text-primary hover:text-primary-dark transition-all"
-          >
-            {desktopLinkText}
-          </a>
-        </Text>
+
+        <MenuMobile isOpen={isOpenMobileMenu} onChange={setIsOpenMobileMenu} />
       </Box>
-      <Box className="fixed bg-custom-gray-500 w-full h-20 lg:h-28 top-0 left-0 -z-10" />
+      <Box className="fixed left-0 top-0 -z-10 h-20 w-full bg-custom-gray-600 lg:h-28" />
     </Box>
-  )
-}
+  );
+};

@@ -61,6 +61,9 @@ module.exports = {
       },
       padding: {
         '1px': '1px',
+      },
+      borderRadius: {
+        '4xl': '2rem',
       }
 
     },

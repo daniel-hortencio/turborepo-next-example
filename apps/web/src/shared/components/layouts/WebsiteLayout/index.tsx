@@ -1,14 +1,14 @@
-'use client'
+"use client";
 
-import { Box } from 'shared/components/elements'
-import { WebsiteLayoutHeader } from './Header'
+import { Box } from "../../elements";
+import { WebsiteLayoutHeader } from "./Header";
 
 export default function WebsiteLayout({ children }) {
   return (
-    <Box>
+    <Box className="relative flex min-h-screen w-full flex-col overflow-x-hidden pt-20 lg:pt-28">
+      <Box className="fixed left-0 top-0 -z-20 h-full w-full" />
       <WebsiteLayoutHeader />
-
       {children}
     </Box>
-  )
+  );
 }

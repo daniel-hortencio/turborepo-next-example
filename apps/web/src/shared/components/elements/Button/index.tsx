@@ -1,53 +1,54 @@
-import React, { HTMLAttributes } from 'react'
-import Link from 'next/link'
-import { PulseLoader } from 'react-spinners'
+import React, { HTMLAttributes } from "react";
+import Link from "next/link";
+import { PulseLoader } from "react-spinners";
 
 export interface IButton {
-  text: string | JSX.Element
-  type?: 'submit' | 'reset' | 'button'
-  size?: 'small' | 'large'
-  height?: 'low' | 'high'
-  color?: 'primary' | 'secondary' | 'danger'
-  onClick?: () => void
-  className?: string
-  as?: 'button' | 'link'
-  href?: string
-  loading?: boolean
+  text: string | JSX.Element;
+  type?: "submit" | "reset" | "button";
+  size?: "small" | "large";
+  height?: "low" | "high";
+  color?: "primary" | "secondary" | "danger" | "transparent";
+  onClick?: () => void;
+  className?: string;
+  as?: "button" | "link";
+  href?: string;
+  loading?: boolean;
 }
 
 export const Button = ({
   text,
-  type = 'button',
-  size = 'small',
-  color = 'secondary',
-  height = 'high',
+  type = "button",
+  size = "small",
+  color = "secondary",
+  height = "high",
   onClick,
   className,
-  as = 'button',
-  href = '/',
-  loading
+  as = "button",
+  href = "/",
+  loading,
 }: IButton) => {
   function getClassName() {
     const color_schemes = {
       primary:
-        'bg-primary hover:bg-primary-dark text-white fill-white stroke-white',
+        "bg-primary hover:bg-primary-dark text-white fill-white stroke-white",
       secondary:
-        'bg-primary-light text-primary fill-primary hover:bg-primary-dark hover:fill-white hover:text-white',
-      danger: 'bg-danger hover:bg-danger-dark text-white fill-white'
-    }
+        "bg-primary-light text-primary fill-primary hover:bg-primary-dark hover:fill-white hover:text-white",
+      danger: "bg-danger hover:bg-danger-dark text-white fill-white",
+      transparent: "bg-transparent border-white border-1 text-white",
+    };
 
     let classNameScheme =
-      'relative rounded-full flex justify-center items-center transition-all flex-nowrap '
+      "relative rounded-full flex justify-center items-center transition-all flex-nowrap ";
 
-    classNameScheme += ` ${color_schemes[color]}`
-    classNameScheme += ` ${height === 'high' ? 'h-12' : 'h-10 text-sm'}`
-    classNameScheme += ` ${size === 'small' ? 'w-12' : 'w-full'}`
-    classNameScheme += ` ${className && ''}`
+    classNameScheme += ` ${color_schemes[color]}`;
+    classNameScheme += ` ${height === "high" ? "h-12" : "h-10 text-sm"}`;
+    classNameScheme += ` ${size === "small" ? "w-12" : "w-full"}`;
+    classNameScheme += ` ${className && ""}`;
 
-    return classNameScheme
+    return classNameScheme;
   }
 
-  return as === 'button' ? (
+  return as === "button" ? (
     <button
       type={type}
       className={getClassName()}
@@ -60,5 +61,5 @@ export const Button = ({
     <Link href={href}>
       <button className={getClassName()}>{text}</button>
     </Link>
-  )
-}
+  );
+};

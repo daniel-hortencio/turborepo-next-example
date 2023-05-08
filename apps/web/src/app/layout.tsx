@@ -7,7 +7,8 @@ const roboto = Roboto({
   weight: ["100", "300", "400", "500", "700", "900"],
 });
 
-import "../styles/globals.css";
+import "shared/styles/global.css";
+
 import WebsiteLayout from "shared/components/layouts/WebsiteLayout";
 
 export default function RootLayout({ children }) {

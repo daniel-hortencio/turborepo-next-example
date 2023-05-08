@@ -1,7 +1,5 @@
-export default function Test() {
-  return (
-    <>
-      <h1>Website project</h1>
-    </>
-  );
+import { WebsiteHomePage } from "modules/Home";
+
+export default function WebsiteHome() {
+  return <WebsiteHomePage />;
 }
