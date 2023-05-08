@@ -1,15 +1,15 @@
 "use client";
 
-/* import { Roboto } from '@next/font/google'
-
-import '../shared/styles/globals.css'
-import { Suspense } from 'react'
+import { Roboto } from "@next/font/google";
 
 const roboto = Roboto({
-  subsets: ['latin'],
-  weight: ['100', '300', '400', '500', '700', '900']
-})
- */
+  subsets: ["latin"],
+  weight: ["100", "300", "400", "500", "700", "900"],
+});
+
+import "../styles/globals.css";
+import WebsiteLayout from "shared/components/layouts/WebsiteLayout";
+
 export default function RootLayout({ children }) {
   return (
     <html lang="pt-BR">
@@ -18,8 +18,10 @@ export default function RootLayout({ children }) {
         head.js. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
       */}
       <head />
-      <body>
-        <main>{children}</main>
+      <body className={roboto.className}>
+        <WebsiteLayout>
+          <main>{children}</main>
+        </WebsiteLayout>
       </body>
     </html>
   );
