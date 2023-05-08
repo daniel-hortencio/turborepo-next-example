@@ -4,7 +4,7 @@ import S from "./styles.module.css";
 
 export const WebsiteBenefits = () => {
   return (
-    <Wrapper>
+    <Wrapper className="test">
       {" "}
       <Box className={`${S.Benefits} gap-10`}>
         <Box>

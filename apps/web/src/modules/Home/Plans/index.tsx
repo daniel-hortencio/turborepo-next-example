@@ -1,53 +1,73 @@
-import { Box } from 'shared/components/elements'
+import { Box, Icon, Text, Wrapper } from "shared/components/elements";
 
 export const WebsitePlans = () => {
   return (
-    <Box>
-      <h1>Escolha o plano ideal</h1>
-      <p>
-        Diversas opções disponíveis, uma solução completa para escalar o seu
-        negócio sem causar impacto no financeiro da empresa.{' '}
-      </p>
+    <Wrapper className="test bg-custom-gray-100">
+      <Box className="mx-auto mb-16 max-w-3xl">
+        <Text className="mb-5 text-center text-28px font-extrabold text-custom-gray-500">
+          Escolha o plano ideal
+        </Text>
+        <Text className="text-center text-custom-gray-400">
+          Diversas opções disponíveis, uma solução completa para escalar o seu
+          negócio sem causar impacto no financeiro da empresa.{" "}
+        </Text>
+      </Box>
 
-      <h4>
+      <Text className="mx-auto max-w-2xl text-center text-xl font-bold text-custom-gray-500">
         Independente do plano desejado, nossos clientes tem acesso a todos os
         benefícios da plataforma:
-      </h4>
+      </Text>
 
       <Box>
-        <h5>Consulta automática de processos judiciais</h5>
-        <p>
+        <Text>Consulta automática de processos judiciais</Text>
+        <Text>
           Via painel web ou API, diretamente conectado aos sistemas do PJE,
           EPROC, ESAJ e PROJUDI.
-        </p>
+        </Text>
       </Box>
 
-      <Box>
-        <h5>Monitoramento inteligente de processos por e-mail e webhook</h5>
-        <p>
-          Notificamos em tempo real no momento em que o processo registrar um
-          andamento (atualização).
-        </p>
+      <Box className="flex fill-primary">
+        <Icon name="Checks" />
+        <Box className="ml-4">
+          <Text>
+            Monitoramento inteligente de processos por e-mail e webhook
+          </Text>
+          <Text>
+            Notificamos em tempo real no momento em que o processo registrar um
+            andamento (atualização).
+          </Text>
+        </Box>
       </Box>
 
-      <Box>
-        <h5>Visualização dos autos do processo</h5>
-        <p>Veja de forma completa os anexos relacionados ao processo.</p>
+      <Box className="flex fill-primary">
+        <Icon name="Checks" />
+        <Box className="ml-4">
+          <Text>Visualização dos autos do processo</Text>
+          <Text>
+            Veja de forma completa os anexos relacionados ao processo.
+          </Text>
+        </Box>
       </Box>
 
-      <Box>
-        <h5>Quantidade de instâncias ilimitadas</h5>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean in
-          facilisis lacus. Duis vitae libero posuere, commodo turpis at,
-          facilisis ipsum.
-        </p>
+      <Box className="flex fill-primary">
+        <Icon name="Checks" />
+        <Box className="ml-4">
+          <Text>Quantidade de instâncias ilimitadas</Text>
+          <Text>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean in
+            facilisis lacus. Duis vitae libero posuere, commodo turpis at,
+            facilisis ipsum.
+          </Text>
+        </Box>
       </Box>
 
-      <Box>
-        <h5>Processos em segredo de justiça</h5>
-        <p>Opção de acessar utilizando um token de advogado.</p>
+      <Box className="flex fill-primary">
+        <Icon name="Checks" />
+        <Box className="ml-4">
+          <Text>Processos em segredo de justiça</Text>
+          <Text>Opção de acessar utilizando um token de advogado.</Text>
+        </Box>
       </Box>
-    </Box>
-  )
-}
+    </Wrapper>
+  );
+};
