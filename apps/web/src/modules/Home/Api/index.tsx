@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Box, Button, Icon, Text, Wrapper } from "shared/components/elements";
 
 import S from "./styles.module.css";
@@ -9,32 +10,33 @@ export const WebsiteApi = () => {
         className={`${S.IntegratingToApi} mb-4 rounded-[32px] bg-primary-light px-12 py-9`}
       >
         <Box className="grid w-72 grid-cols-3 gap-7 ">
+          {[
+            { src: "swift", width: 28, height: 28 },
+            { src: "js", width: 28, height: 28 },
+            { src: "python", width: 28, height: 28 },
+            { src: "java", width: 28, height: 28 },
+            { src: "php", width: 28, height: 28 },
+            { src: "ruby", width: 28, height: 28 },
+            { src: "react", width: 28, height: 28 },
+            { src: "c", width: 28, height: 28 },
+          ].map((logo) => (
+            <Box
+              key={logo.src}
+              className="flex h-20 w-20 items-center justify-center rounded-full bg-white"
+            >
+              <Image
+                src={`/images/logos/${logo.src}.svg`}
+                alt={logo.src}
+                width={logo.width}
+                height={logo.height}
+                style={{
+                  objectFit: "contain",
+                }}
+              />
+            </Box>
+          ))}
           <Box className="flex h-20 w-20 items-center justify-center rounded-full bg-white">
-            <Text>teste</Text>
-          </Box>
-          <Box className="flex h-20 w-20 items-center justify-center rounded-full bg-white">
-            <Text>teste</Text>
-          </Box>
-          <Box className="flex h-20 w-20 items-center justify-center rounded-full bg-white">
-            <Text>teste</Text>
-          </Box>
-          <Box className="flex h-20 w-20 items-center justify-center rounded-full bg-white">
-            <Text>teste</Text>
-          </Box>
-          <Box className="flex h-20 w-20 items-center justify-center rounded-full bg-white">
-            <Text>teste</Text>
-          </Box>
-          <Box className="flex h-20 w-20 items-center justify-center rounded-full bg-white">
-            <Text>teste</Text>
-          </Box>
-          <Box className="flex h-20 w-20 items-center justify-center rounded-full bg-white">
-            <Text>teste</Text>
-          </Box>
-          <Box className="flex h-20 w-20 items-center justify-center rounded-full bg-white">
-            <Text>teste</Text>
-          </Box>
-          <Box className="flex h-20 w-20 items-center justify-center rounded-full bg-white">
-            <Text>teste</Text>
+            <Text className="font-bold">+ 7</Text>
           </Box>
         </Box>
 
