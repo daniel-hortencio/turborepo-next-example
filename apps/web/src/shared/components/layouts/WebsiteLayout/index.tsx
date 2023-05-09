@@ -1,6 +1,7 @@
 "use client";
 
 import { Box } from "../../elements";
+import { WebsiteFooter } from "./Footer";
 import { WebsiteLayoutHeader } from "./Header";
 
 export default function WebsiteLayout({ children }) {
@@ -9,6 +10,7 @@ export default function WebsiteLayout({ children }) {
       <Box className="fixed left-0 top-0 -z-20 h-full w-full" />
       <WebsiteLayoutHeader />
       {children}
+      <WebsiteFooter />
     </Box>
   );
 }

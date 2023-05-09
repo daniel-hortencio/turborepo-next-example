@@ -1,7 +1,7 @@
-import Image from 'next/image'
+import Image from "next/image";
 
 interface Props {
-  color: 'white' | 'black'
+  color: "white" | "black" | "gray";
 }
 
 export const Logo = ({ color }: Props) => {
@@ -12,8 +12,8 @@ export const Logo = ({ color }: Props) => {
       width={108}
       height={108}
       style={{
-        objectFit: 'cover'
+        objectFit: "cover",
       }}
     />
-  )
-}
+  );
+};
