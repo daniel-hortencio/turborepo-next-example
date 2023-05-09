@@ -1,6 +1,7 @@
 import Icon from "./Icon";
 
 // Components
+export { Accordion } from "./Accordion";
 export { Box } from "./Box";
 export { Button } from "./Button";
 export { Card } from "./Card";

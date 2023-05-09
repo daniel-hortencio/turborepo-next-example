@@ -6,6 +6,7 @@ import { WebsiteHowWorks } from "./HowWorks";
 import { WebsiteApi } from "./Api";
 import { WebsiteBenefits } from "./Benefits";
 import { WebsitePlans } from "./Plans";
+import { WebsiteCommonQuestions } from "./CommonQuestions";
 
 export const WebsiteHomePage = () => {
   return (
@@ -15,6 +16,7 @@ export const WebsiteHomePage = () => {
       <WebsiteApi />
       <WebsiteBenefits />
       <WebsitePlans />
+      <WebsiteCommonQuestions />
     </Box>
   );
 };
