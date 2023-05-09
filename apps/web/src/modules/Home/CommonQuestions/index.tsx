@@ -2,12 +2,12 @@ import { Accordion, Box, Text, Wrapper } from "shared/components/elements";
 
 export const WebsiteCommonQuestions = () => {
   return (
-    <Wrapper className="test pb-20 pt-16">
-      <Box className="mb-3 flex flex-col items-center">
-        <Text className="mb-5 text-xl font-bold text-custom-gray-500">
+    <Wrapper className="pb-16 pt-11 md:pb-20 md:pt-16">
+      <Box className="mb-7 flex flex-col items-center md:mb-3">
+        <Text className="mb-0 text-xl font-bold text-custom-gray-500 md:mb-5">
           Perguntas Frequentes
         </Text>
-        <Text className="mb-16 max-w-3xl text-center text-custom-gray-400">
+        <Text className="mb-16 hidden max-w-3xl text-center text-custom-gray-400 md:block">
           Quisque eget mauris tempus, tempor dui eu, eleifend turpis. Integer
           bibendum nulla vitae mi interdum, ac bibendum lacus pulvinar.
         </Text>

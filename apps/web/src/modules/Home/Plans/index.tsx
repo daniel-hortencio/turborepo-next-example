@@ -4,7 +4,7 @@ import S from "./styles.module.css";
 
 export const WebsitePlans = () => {
   return (
-    <Wrapper className="test bg-custom-gray-100 pb-12">
+    <Wrapper className="bg-custom-gray-100 pb-7 md:pb-12">
       <Box className="mx-auto mb-16 max-w-3xl">
         <Text className="mb-5 text-center text-28px font-extrabold text-custom-gray-500">
           Escolha o plano ideal
@@ -15,8 +15,8 @@ export const WebsitePlans = () => {
         </Text>
       </Box>
 
-      <Box className={`${S.TablePlansRow} mb-3`}>
-        <Text className="flex justify-end text-sm uppercase text-custom-gray-300">
+      <Box className={`hidden md:grid ${S.TablePlansRow} mb-3`}>
+        <Text className="flex justify-end text-right text-sm uppercase text-custom-gray-300">
           LIMITE DE CONSULTAS
         </Text>
         <Text className="text-sm uppercase text-custom-gray-300">
@@ -85,39 +85,64 @@ export const WebsitePlans = () => {
             monthly_payment: "59.000,00",
           },
         ].map((item) => (
-          <Box
-            key={item.limit}
-            className={`mb-5 rounded-lg bg-white p-1 shadow-md ${S.TablePlansRow}`}
-          >
-            <Text className="flex items-center justify-end font-bold text-custom-gray-400">
-              {item.limit}
-            </Text>
-            <Text className="flex items-center text-custom-gray-400">
-              {item.consumption} consultas
-            </Text>
-            <Text className="flex items-center justify-center text-custom-gray-400">
-              {item.discount} %
-            </Text>
-            <Text className="flex items-center justify-center text-custom-gray-400">
-              + R$ {item.by_consultation}
-            </Text>
-            <Text className="flex items-center text-custom-gray-500">
-              R$
-              <strong className="ml-1 block font-bold">
-                {item.monthly_payment}
-              </strong>
-            </Text>
-            <button className="rounded-md bg-primary-light transition-all hover:bg-primary ">
-              <Box className="flex h-[52px] w-full items-center justify-center fill-primary text-primary transition-all hover:fill-white hover:text-white">
-                <Icon name="ShoppingCartSimple" />{" "}
-                <Text className="ml-3">Contratar</Text>
-              </Box>
-            </button>
+          <Box key={item.limit}>
+            <Box
+              className={`mb-5 hidden rounded-lg p-1 shadow-md md:grid ${S.TablePlansRow}`}
+            >
+              <Text className="flex items-center justify-end text-right text-sm font-bold text-custom-gray-400 lg:text-base">
+                {item.limit}
+              </Text>
+              <Text className="flex items-center text-sm text-custom-gray-400 lg:text-base">
+                {item.consumption} consultas
+              </Text>
+              <Text className="flex items-center justify-center text-sm text-custom-gray-400 lg:text-base">
+                {item.discount} %
+              </Text>
+              <Text className="flex items-center justify-center text-sm text-custom-gray-400 lg:text-base">
+                + R$ {item.by_consultation}
+              </Text>
+              <Text className="flex items-center text-sm text-custom-gray-500 lg:text-base">
+                R$
+                <strong className="ml-1 block font-bold">
+                  {item.monthly_payment}
+                </strong>
+              </Text>
+              <button className="rounded-md bg-primary-light transition-all hover:bg-primary ">
+                <Box className="flex h-[52px] w-full items-center justify-center fill-primary text-primary transition-all hover:fill-white hover:text-white">
+                  <Icon name="ShoppingCartSimple" />{" "}
+                  <Text className="ml-3">Contratar</Text>
+                </Box>
+              </button>
+            </Box>
+
+            <Box className="mb-5 rounded-lg bg-white px-5 py-6 shadow-md md:hidden">
+              <Text className="mb-3 text-lg text-custom-gray-500">
+                R${" "}
+                <strong className="font-bold">
+                  {item.monthly_payment} mínimo mensal
+                </strong>
+              </Text>
+              <Text className="text-sm text-custom-gray-400">
+                · Limite de 1.000 consultas
+              </Text>
+              <Text className="text-sm text-custom-gray-400">
+                · Consumo mínimo de 100 consultas
+              </Text>
+              <Text className="mb-6 text-sm text-custom-gray-400">
+                · + R$ 0,59 por consulta
+              </Text>
+              <button className="w-full rounded-md bg-primary-light transition-all hover:bg-primary">
+                <Box className="flex h-[52px] w-full items-center justify-center fill-primary text-primary transition-all hover:fill-white hover:text-white">
+                  <Icon name="ShoppingCartSimple" />{" "}
+                  <Text className="ml-3">Contratar</Text>
+                </Box>
+              </button>
+            </Box>
           </Box>
         ))}
       </Box>
 
-      <Text className="mx-auto mb-11 max-w-2xl text-center text-xl font-bold text-custom-gray-500">
+      <Text className="mx-auto mb-8 w-3/4 text-center text-2xl font-extrabold text-custom-gray-500 md:mb-11 md:max-w-2xl md:text-xl md:font-bold">
         Independente do plano desejado, nossos clientes tem acesso a todos os
         benefícios da plataforma:
       </Text>
@@ -149,7 +174,9 @@ export const WebsitePlans = () => {
         },
       ].map((item, index) => (
         <Box key={item.title} className="mb-6 flex fill-primary">
-          <Icon name="Checks" />
+          <Box className="translate-y-1">
+            <Icon name="Checks" size={20} />
+          </Box>
           <Box
             className={`ml-4 border-custom-gray-200 pb-6 ${
               index < 4 && "border-b-[1px]"
