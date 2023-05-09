@@ -4,9 +4,9 @@ import S from "./styles.module.css";
 
 export const WebsitePlans = () => {
   return (
-    <Wrapper className="bg-custom-gray-100 pb-7 md:pb-12">
-      <Box className="mx-auto mb-16 max-w-3xl">
-        <Text className="mb-5 text-center text-28px font-extrabold text-custom-gray-500">
+    <Wrapper className="bg-custom-gray-100 pb-7 pt-12 md:pb-12 md:pt-16">
+      <Box className="mx-auto max-w-3xl pb-11 md:pb-16">
+        <Text className="mb-4 text-center text-28px font-extrabold text-custom-gray-500 md:mb-5">
           Escolha o plano ideal
         </Text>
         <Text className="text-center text-custom-gray-400">
@@ -22,10 +22,10 @@ export const WebsitePlans = () => {
         <Text className="text-sm uppercase text-custom-gray-300">
           CONSUMO MÍNIMO
         </Text>
-        <Text className="flex justify-center text-sm uppercase text-custom-gray-300">
+        <Text className="flex justify-center text-center text-sm uppercase text-custom-gray-300">
           DESCONTO
         </Text>
-        <Text className="flex justify-center text-sm uppercase text-custom-gray-300">
+        <Text className="flex justify-center text-center text-sm uppercase text-custom-gray-300">
           POR CONSULTA
         </Text>
         <Text className="text-sm uppercase text-custom-gray-300">
@@ -87,7 +87,7 @@ export const WebsitePlans = () => {
         ].map((item) => (
           <Box key={item.limit}>
             <Box
-              className={`mb-5 hidden rounded-lg p-1 shadow-md md:grid ${S.TablePlansRow}`}
+              className={`mb-5 hidden rounded-lg bg-white p-1 shadow-md md:grid ${S.TablePlansRow}`}
             >
               <Text className="flex items-center justify-end text-right text-sm font-bold text-custom-gray-400 lg:text-base">
                 {item.limit}
