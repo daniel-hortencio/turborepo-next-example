@@ -1,0 +1,5 @@
+.IntegratingToApi {
+  display: grid;
+  grid-template-columns: 18rem 1fr;
+  gap: 2.75rem;
+}
