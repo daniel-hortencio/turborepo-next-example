@@ -1,6 +1,5 @@
 import { FieldValues, UseFormSetError } from 'react-hook-form'
 import * as yup from 'yup'
-import { ValidationError } from '../types/ValidationError'
 
 type Props = {
   schema: yup.ObjectSchema<any>
@@ -14,7 +13,7 @@ export const yupValidator = ({ schema, data, setError, onSuccess }: Props) => {
     .validate(data, { abortEarly: false })
     .then(onSuccess)
     .catch(validationErrors => {
-      validationErrors.inner.forEach(({ message, path }: ValidationError) => {
+      validationErrors.inner.forEach(({ message, path }: any) => {
         setError(path, { message })
       })
     })
