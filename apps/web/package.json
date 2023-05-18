@@ -23,7 +23,8 @@
     "react-hook-form": "^7.43.9",
     "react-scroll": "^1.8.9",
     "react-spinners": "^0.13.8",
-    "ui": "*"
+    "ui": "*",
+    "yup": "^1.1.1"
   },
   "devDependencies": {
     "@types/node": "^18.11.17",
