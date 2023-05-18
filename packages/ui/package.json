@@ -6,8 +6,8 @@
   ],
   "types": "./dist/index.d.ts",
   "exports": {
-    ".": "./dist",
-    "./styles.css": "./dist/index.css"
+    ".": "./index.tsx",
+    "./src": "./src"
   },
   "license": "MIT",
   "scripts": {
