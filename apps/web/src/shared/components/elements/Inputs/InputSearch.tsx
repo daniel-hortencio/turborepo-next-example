@@ -4,8 +4,8 @@ import { useRef, useState } from 'react'
 
 import { InputBaseProps } from './InputBase'
 import Icon from '../Icon'
-import { Box } from '../Box'
-import { Card } from '../Card'
+import { Box } from 'ui'
+import { Card } from 'ui'
 import { getRefValue } from 'shared/utils'
 
 interface Props extends Omit<InputBaseProps, 'text' | 'value' | 'onChange'> {
@@ -22,9 +22,9 @@ export const InputSearch = ({
   const input_search_ref = useRef<HTMLInputElement>(null)
 
   return (
-    <Box className={`relative flex justify-end flex-auto`}>
+    <Box className={`relative flex flex-auto justify-end`}>
       <Card
-        className={`flex items-center h-12 justify-between rounded-full overflow-hidden relative text-custom-gray-400 fill-primary focus-within:fill-primary-dark transition-all ${
+        className={`relative flex h-12 items-center justify-between overflow-hidden rounded-full fill-primary text-custom-gray-400 transition-all focus-within:fill-primary-dark ${
           variant === 'collapsible' && collapsed ? 'w-12' : 'w-full'
         }`}
       >
@@ -38,13 +38,13 @@ export const InputSearch = ({
             )
               setCollapsed(true)
           }}
-          className={`w-full placeholder-custom-gray-400 pl-6 pr-14 h-full text-custom-gray-500 `}
+          className={`h-full w-full pl-6 pr-14 text-custom-gray-500 placeholder-custom-gray-400 `}
           autoComplete="off"
         />
-        <div className="absolute h-full right-0 flex items-center">
+        <div className="absolute right-0 flex h-full items-center">
           <button
             type={getRefValue(input_search_ref) === '' ? 'button' : 'submit'}
-            className="p-1.5 m-2  transition-all "
+            className="m-2 p-1.5  transition-all "
             onClick={() => {
               getRefValue(input_search_ref) === ''
                 ? setCollapsed(false)

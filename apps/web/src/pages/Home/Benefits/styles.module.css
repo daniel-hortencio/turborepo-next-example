@@ -1,0 +1,12 @@
+@media (min-width: 768px) {
+  .Benefits {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1024px) {
+  .Benefits {
+    grid-template-columns: 28rem 1fr;
+  }
+}

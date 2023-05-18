@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box } from '../Box'
+import { Box } from 'ui'
 import Icon from '../Icon'
 
 export interface ICheckbox {
@@ -9,9 +9,9 @@ export interface ICheckbox {
 
 export const Checkbox = ({ checked, onChange }: ICheckbox) => {
   return (
-    <div className="relative border-1 border-custom-gray-100 rounded w-5 h-5 shadow-md cursor-pointer">
+    <div className="relative h-5 w-5 cursor-pointer rounded border-1 border-custom-gray-100 shadow-md">
       {checked && (
-        <Box className="flex items-center justify-center fill-primary w-full h-full absolute top-0 left-0">
+        <Box className="absolute left-0 top-0 flex h-full w-full items-center justify-center fill-primary">
           <Icon name="Check" size={12} />
         </Box>
       )}
@@ -20,7 +20,7 @@ export const Checkbox = ({ checked, onChange }: ICheckbox) => {
         type="checkbox"
         checked={checked}
         onChange={e => onChange(e.target.checked)}
-        className="w-full h-full absolute top-0 left-0 cursor-pointer opacity-0"
+        className="absolute left-0 top-0 h-full w-full cursor-pointer opacity-0"
       />
     </div>
   )

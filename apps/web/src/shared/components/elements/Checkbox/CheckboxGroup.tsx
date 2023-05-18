@@ -1,7 +1,7 @@
 import React from 'react'
-import { Box } from '../Box'
+import { Box } from 'ui'
 import { Checkbox, ICheckbox } from './Checkbox'
-import { Text } from '../Text'
+import { Text } from 'ui'
 
 interface Props extends ICheckbox {
   label: string
@@ -13,7 +13,7 @@ export const CheckboxGroup = (props: Props) => {
       <Checkbox {...props} />
       <Text
         as="label"
-        className="ml-4 text-sm md:text-base text-custom-gray-400"
+        className="ml-4 text-sm text-custom-gray-400 md:text-base"
       >
         {props.label}
       </Text>

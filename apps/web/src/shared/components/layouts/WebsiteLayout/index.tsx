@@ -1,8 +1,8 @@
-"use client";
+'use client'
 
-import { Box } from "../../elements";
-import { WebsiteFooter } from "./Footer";
-import { WebsiteLayoutHeader } from "./Header";
+import { Box } from 'ui'
+import { WebsiteFooter } from './Footer'
+import { WebsiteLayoutHeader } from './Header'
 
 export default function WebsiteLayout({ children }) {
   return (
@@ -12,5 +12,5 @@ export default function WebsiteLayout({ children }) {
       {children}
       <WebsiteFooter />
     </Box>
-  );
+  )
 }
