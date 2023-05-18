@@ -1,6 +1,6 @@
 "use client";
 
-import { Box } from "shared/components/elements";
+import { Box } from "ui";
 import { WebsiteHomeBanner } from "./Banner";
 import { WebsiteHowWorks } from "./HowWorks";
 import { WebsiteApi } from "./Api";
