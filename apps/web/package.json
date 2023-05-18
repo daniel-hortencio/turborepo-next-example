@@ -16,11 +16,13 @@
     "@opentelemetry/resources": "^1.13.0",
     "@opentelemetry/sdk-trace-node": "^1.13.0",
     "@opentelemetry/semantic-conventions": "^1.13.0",
+    "@phosphor-icons/react": "^2.0.9",
     "next": "^13.4.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.43.9",
     "react-scroll": "^1.8.9",
+    "react-spinners": "^0.13.8",
     "ui": "*"
   },
   "devDependencies": {
