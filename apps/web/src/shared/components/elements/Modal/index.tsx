@@ -1,28 +1,28 @@
-'use client'
+"use client";
 
-import { Fragment, ReactNode, useRef } from 'react'
-import { Dialog, Transition } from '@headlessui/react'
-import { Box } from '../Box'
-import { Text } from '../Text'
-import Icon from '../Icon'
+import { Fragment, ReactNode, useRef } from "react";
+import { Dialog, Transition } from "@headlessui/react";
+import { Box } from "ui";
+import { Text } from "ui";
+import Icon from "../Icon";
 
 type ModalHeader = {
-  title?: string
-  subtitle?: string
-  align?: 'left' | 'center' | 'right'
-}
+  title?: string;
+  subtitle?: string;
+  align?: "left" | "center" | "right";
+};
 
 export interface IModal {
-  header?: ModalHeader
-  showButtonClose?: boolean
-  isOpen: boolean
-  onClose: () => void
-  body?: ReactNode
-  footer?: ReactNode
-  wrapper?: () => JSX.Element
-  positionX?: 'left' | 'center' | 'right'
-  className?: string
-  isCustom?: boolean
+  header?: ModalHeader;
+  showButtonClose?: boolean;
+  isOpen: boolean;
+  onClose: () => void;
+  body?: ReactNode;
+  footer?: ReactNode;
+  wrapper?: () => JSX.Element;
+  positionX?: "left" | "center" | "right";
+  className?: string;
+  isCustom?: boolean;
 }
 
 export const Modal = ({
@@ -32,25 +32,25 @@ export const Modal = ({
   onClose,
   body,
   footer,
-  positionX = 'center',
-  className = '',
-  isCustom = false
+  positionX = "center",
+  className = "",
+  isCustom = false,
 }: IModal) => {
-  const cancelButtonRef = useRef(null)
+  const cancelButtonRef = useRef(null);
 
   const getStyle = () => {
     const positions_x = {
-      left: 'justify-start',
-      center: 'justify-center',
-      right: 'justify-end'
-    }
+      left: "justify-start",
+      center: "justify-center",
+      right: "justify-end",
+    };
 
-    return `flex min-h-full items-end ${positions_x[positionX]} p-4 text-center items-center md:p-5`
-  }
+    return `flex min-h-full items-end ${positions_x[positionX]} p-4 text-center items-center md:p-5`;
+  };
 
   const getClassName = () => {
-    return `relative transform overflow-hidden bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg md:max-w-screen-md rounded-3xl ${className}`
-  }
+    return `relative transform overflow-hidden bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg md:max-w-screen-md rounded-3xl ${className}`;
+  };
 
   return (
     <Transition.Root show={isOpen} as={Fragment}>
@@ -69,7 +69,7 @@ export const Modal = ({
           leaveFrom="opacity-100"
           leaveTo="opacity-0"
         >
-          <div className="fixed inset-0 bg-gray-500 bg-opacity-30 transition-opacity backdrop-blur-xs" />
+          <div className="fixed inset-0 bg-gray-500 bg-opacity-30 backdrop-blur-xs transition-opacity" />
         </Transition.Child>
 
         <div className="fixed inset-0 z-10 overflow-y-auto">
@@ -90,7 +90,7 @@ export const Modal = ({
                     {showButtonClose && (
                       <button
                         type="button"
-                        className="absolute top-5 right-5 p-0.5 fill-custom-gray-300 hover:fill-primary transition-all"
+                        className="absolute right-5 top-5 fill-custom-gray-300 p-0.5 transition-all hover:fill-primary"
                         onClick={onClose}
                         ref={cancelButtonRef}
                       >
@@ -104,7 +104,7 @@ export const Modal = ({
                       {showButtonClose && (
                         <button
                           type="button"
-                          className="absolute top-5 right-5 p-0.5 fill-custom-gray-300 hover:fill-primary transition-all"
+                          className="absolute right-5 top-5 fill-custom-gray-300 p-0.5 transition-all hover:fill-primary"
                           onClick={onClose}
                           ref={cancelButtonRef}
                         >
@@ -115,7 +115,7 @@ export const Modal = ({
                         <Box as="header" className="pt-8">
                           {header.title && (
                             <Text
-                              className={`font-bold text-2xl mb-4 ${
+                              className={`mb-4 text-2xl font-bold ${
                                 header.align && `text-${header.align}`
                               }`}
                             >
@@ -136,13 +136,13 @@ export const Modal = ({
                       )}
                     </Dialog.Title>
 
-                    {body && <Box className="py-6 h-full">{body}</Box>}
+                    {body && <Box className="h-full py-6">{body}</Box>}
                   </Box>
                 )}
                 {footer && (
                   <Box
                     as="footer"
-                    className="p-8 border-t-1 border-custom-gray-200"
+                    className="border-t-1 border-custom-gray-200 p-8"
                   >
                     {footer}
                   </Box>
@@ -153,7 +153,7 @@ export const Modal = ({
         </div>
       </Dialog>
     </Transition.Root>
-  )
-}
+  );
+};
 
-export default Modal
+export default Modal;
