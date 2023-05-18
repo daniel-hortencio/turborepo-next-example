@@ -1,10 +1,10 @@
 import { Paragraph, SubTitle } from '.'
-import { Box } from '../Box'
+import { Box } from 'ui'
 
-import S from './styles.module.css'
+import './styles.css'
 
 export const PrivacyPolicy = () => (
-  <Box className={`${S.PrivacyPolicyAndTermsOfUse} overflow-y-auto pr-4`}>
+  <Box className={`PrivacyPolicyAndTermsOfUse overflow-y-auto pr-4`}>
     <SubTitle>1. INTRODUÇÃO: POR QUE UMA POLÍTICA DE PRIVACIDADE?</SubTitle>
     <Paragraph>
       1.1. Obrigado por se conectar com a JUDIT! Através deste documento
@@ -543,3 +543,5 @@ export const PrivacyPolicy = () => (
     </Paragraph>
   </Box>
 )
+
+export default PrivacyPolicy

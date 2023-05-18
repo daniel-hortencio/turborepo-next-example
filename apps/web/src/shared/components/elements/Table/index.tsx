@@ -1,10 +1,4 @@
-import { Box } from '..'
-
-import { TableHeader } from './TableHeader'
-
-type TableColumn = {
-  title: string
-}
+import { Box } from 'ui'
 
 interface TableColumnsDefinition {
   data: any

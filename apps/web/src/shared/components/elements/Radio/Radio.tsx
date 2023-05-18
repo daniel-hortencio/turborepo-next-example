@@ -1,4 +1,4 @@
-import { Box } from '../Box'
+import { Box } from 'ui'
 
 export interface IRadio {
   value: string
@@ -9,17 +9,17 @@ export interface IRadio {
 export const Radio = ({ checked, value, onChange }: IRadio) => {
   return (
     <div
-      className={`relative border-1 border-custom-gray-100 rounded-full w-5 h-5 shadow-md cursor-pointer flex items-center justify-center`}
+      className={`relative flex h-5 w-5 cursor-pointer items-center justify-center rounded-full border-1 border-custom-gray-100 shadow-md`}
     >
       {checked && (
-        <Box className={`bg-primary w-3 h-3 top-1 left-1 rounded-full`} />
+        <Box className={`left-1 top-1 h-3 w-3 rounded-full bg-primary`} />
       )}
 
       <input
         type="radio"
         value={value}
         checked={checked}
-        className={`w-full h-full cursor-pointer absolute top-0 left-0 opacity-0`}
+        className={`absolute left-0 top-0 h-full w-full cursor-pointer opacity-0`}
         onChange={e => onChange(e.target.value)}
       />
     </div>
