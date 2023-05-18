@@ -1,4 +1,4 @@
-import { Box } from 'ui'
+import { Box } from '..'
 
 interface Props {
   titles: string[]
@@ -11,7 +11,7 @@ export const TableHeader = ({ titles, className }: Props) => {
       {titles.map(title => (
         <Box
           key={title}
-          className="pb-4 text-sm uppercase tracking-widest text-custom-gray-300"
+          className="uppercase text-custom-gray-300 text-sm pb-4 tracking-widest"
         >
           {title}
         </Box>

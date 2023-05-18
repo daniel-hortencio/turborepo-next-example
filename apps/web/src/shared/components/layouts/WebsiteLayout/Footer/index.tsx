@@ -1,44 +1,6 @@
-'use client'
-
-import { useCallback } from 'react'
-
-import { Logo, PrivacyPolicy, TermsOfUse } from 'shared/components/elements'
-import { Box, LinkExternal, Text, Wrapper } from 'ui'
-import { useModal } from 'shared/contexts/Modal'
-import { WhatsappLink } from '../WhatsappLink'
-import { Environments } from 'shared/constants/environments'
+import { Box, Logo, Text, Wrapper } from "shared/components/elements";
 
 export const WebsiteFooter = () => {
-  const { createModal } = useModal()
-
-  const createModalPolicy = useCallback(() => {
-    createModal({
-      header: {
-        title: 'POLÍTICA DE PRIVACIDADE DA JUDIT',
-        subtitle: 'Esta versão foi atualizada em Abril de 2023.'
-      },
-      body: <PrivacyPolicy />
-    })
-  }, [])
-
-  const createModalTerms = useCallback(
-    () =>
-      createModal({
-        header: {
-          title: 'TERMOS DE USO DA JUDIT',
-          subtitle: 'Esta versão foi atualizada em Abril de 2023.'
-        },
-        body: <TermsOfUse />
-      }),
-    []
-  )
-
-  const Link = ({ children, href }) => (
-    <a className="mb-1 block text-white" href={href}>
-      {children}
-    </a>
-  )
-
   return (
     <Wrapper className="bg-[#353535] py-8 md:py-14">
       <Box className="mb-5 flex justify-center md:mb-20 md:justify-between">
@@ -50,45 +12,40 @@ export const WebsiteFooter = () => {
             <Text className="mb-3 uppercase text-white opacity-25">
               Empresa
             </Text>
-            <Link href="/#como-funciona">· Como funciona</Link>
-            <Link href="/#planos">· Planos</Link>
-            <Link href="#">· Carreira</Link>
+            <a className="mb-1 block text-white" href="#">
+              · Como funciona
+            </a>
+            <a className="mb-1 block text-white" href="#">
+              · Planos
+            </a>
+            <a className="mb-1 block text-white" href="#">
+              · Carreira
+            </a>
           </Box>
           <Box className="mr-12 lg:mr-24">
             <Text className="mb-3 uppercase text-white opacity-25">
               UTILIDADES
             </Text>
-            <button
-              className="mb-1 block text-white"
-              onClick={createModalTerms}
-            >
+            <a className="mb-1 block text-white" href="#">
               · Termos de Uso
-            </button>
-            <button
-              className="mb-1 block text-white"
-              onClick={createModalPolicy}
-            >
+            </a>
+            <a className="mb-1 block text-white" href="#">
+              · Uso de Cookies
+            </a>
+            <a className="mb-1 block text-white" href="#">
               · Políticas de Privacidade
-            </button>
+            </a>
           </Box>
           <Box>
             <Text className="mb-3 uppercase text-white opacity-25">
               ATENDIMENTO
             </Text>
-            <LinkExternal
-              className="mb-1 block text-white"
-              href="mailto:suporte@judit.io"
-            >
+            <a className="mb-1 block text-white" href="#">
               · suporte@judit.io
-            </LinkExternal>
-            <LinkExternal
-              className="mb-1 block text-white"
-              href={Environments.LINK_TO_WHATSAPP}
-              target="_blank"
-              rel="no"
-            >
+            </a>
+            <a className="mb-1 block text-white" href="#">
               · WhatsApp
-            </LinkExternal>
+            </a>
           </Box>
         </Box>
       </Box>
@@ -97,15 +54,13 @@ export const WebsiteFooter = () => {
         Av. Churchill, 109, Sala 1202, Rio de Janeiro - CEP 20020-500
       </Text>
       <Text className="mb-3 text-center text-sm text-white opacity-25">
-        A JUDIT TECNOLOGIA DA INFORMAÇÃO LTDA é uma empresa de tecnologia
-        registrada no CNPJ: 50.535.760/0001-71 que disponibiliza para advogados
-        o acesso e o entendimento fácil ao andamento do processo judicial.
+        A MEUCASO PONTOCOM LTDA é uma empresa de tecnologia registrada no CNPJ:
+        48.340.874/0001-14 que disponibiliza para advogados o acesso e o
+        entendimento fácil ao andamento do processo judicial.
       </Text>
       <Text className="text-center text-sm text-white opacity-25">
         2023 © Judit.io
       </Text>
-
-      <WhatsappLink />
     </Wrapper>
-  )
-}
+  );
+};

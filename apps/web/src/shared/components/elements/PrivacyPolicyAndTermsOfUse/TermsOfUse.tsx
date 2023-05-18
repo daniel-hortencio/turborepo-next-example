@@ -1,10 +1,10 @@
-import { Paragraph, SubTitle } from ".";
-import { Box } from "ui";
+import { Paragraph, SubTitle } from '.'
+import { Box } from '../Box'
 
-import "./styles.css";
+import S from './styles.module.css'
 
 export const TermsOfUse = () => (
-  <Box className={`PrivacyPolicyAndTermsOfUse overflow-y-auto pr-4`}>
+  <Box className={`${S.PrivacyPolicyAndTermsOfUse} overflow-y-auto pr-4`}>
     <SubTitle>1. INTRODUÇÃO</SubTitle>
 
     <Paragraph>
@@ -873,4 +873,4 @@ export const TermsOfUse = () => (
       suas condições.
     </Paragraph>
   </Box>
-);
+)

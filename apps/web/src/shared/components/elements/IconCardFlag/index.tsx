@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { Box } from 'ui'
+import { Box } from '../Box'
 
 interface Props {
   flag: 'Mastercard'
@@ -11,7 +11,7 @@ export const IconCardFlag = ({ flag }: Props) => {
   }
 
   return (
-    <Box className="relative h-12 w-12">
+    <Box className="h-12 w-12 relative">
       <Image
         src={card_flag_src[flag]}
         alt={`${flag}`}

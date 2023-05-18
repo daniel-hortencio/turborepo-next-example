@@ -2,8 +2,8 @@ import { Fragment, useState } from 'react'
 import { Listbox, Transition } from '@headlessui/react'
 import { SelectBase } from '../SelectBase'
 import Icon from '../../Icon'
-import { Text } from 'ui'
-import { Box } from 'ui'
+import { Text } from '../../Text'
+import { Box } from '../../Box'
 
 import S from './styles.module.css'
 
@@ -44,7 +44,7 @@ export const Select = ({
   const Display = components?.display || defaultDisplay
 
   const defaultOption = (props: any) => (
-    <Text className="mx-2 truncate text-custom-gray-500">{props.name}</Text>
+    <Text className="text-custom-gray-500 mx-2 truncate">{props.name}</Text>
   )
   const Option = components?.option || defaultOption
 
@@ -55,11 +55,11 @@ export const Select = ({
           <>
             <div className="relative h-full w-full">
               <Listbox.Button
-                className={`${S.SelectSimple__ListBoxButton} relative flex h-full w-full cursor-default items-center justify-between rounded-full px-6 text-left text-custom-gray-500 `}
+                className={`${S.SelectSimple__ListBoxButton} flex items-center justify-between relative w-full cursor-default rounded-full px-6 h-full text-left text-custom-gray-500 `}
               >
                 <Display {...selected} />
                 <Box
-                  className={`fill-custom-gray-300 transition-all ${
+                  className={`transition-all fill-custom-gray-300 ${
                     S.SelectSimple__ListBoxButtonArrow
                   } ${open && 'rotate-180'}`}
                 >
@@ -85,7 +85,7 @@ export const Select = ({
                           active
                             ? 'bg-custom-gray-200 text-white'
                             : 'text-gray-900',
-                          'relative cursor-pointer select-none py-2 pl-3 pr-9'
+                          'relative select-none py-2 pl-3 pr-9 cursor-pointer'
                         )
                       }
                       value={option}
